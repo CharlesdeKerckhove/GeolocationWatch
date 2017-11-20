@@ -1,4 +1,4 @@
-var watchID;
+var watchID = navigator.geolocation.watchPosition(successPosition, failPosition, locationOptions);
 
 var locationOptions = { 
 	maximumAge: 10000, 
@@ -35,6 +35,8 @@ function stopPosition() {
 	
 	//change time box to show updated message
 	$('#time').val("Press the button to get location data");
+	$('#lattext').val("Press the button to get location data");
+	$('#longtext').val("Press the button to get location data");
 	
 	//instruct location service to get position with appropriate callbacks
 	navigator.geolocation.clearWatch(watchID);
